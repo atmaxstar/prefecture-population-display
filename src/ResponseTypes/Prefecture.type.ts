@@ -1,6 +1,6 @@
 import { CommonResponse } from "./Common.type";
 
-interface Prefecture {
+export interface Prefecture {
     prefCode: number;   //県コード
     prefName: string;   //○○県
 }
