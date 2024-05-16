@@ -9,7 +9,9 @@ interface Props {
 
 const PopulationChart = ({selectedPrefectures, populationStore}: Props) => {
   return (
-    <Chart selectedPrefectures={selectedPrefectures} populationStore={populationStore}/>
+    <div className='chart-container'>
+      <Chart selectedPrefectures={selectedPrefectures} populationStore={populationStore}/>
+    </div>
   )
 }
 
