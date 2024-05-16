@@ -48,15 +48,15 @@ const useStorePopulations = () => {
 	 * @param prefName 追加する県の名前
 	 */
 	const pushPopulation = (pops_added: Populations, prefName: string) => {
-        let newPopulationStore = { ...populationStore };
+		// 元のオブジェクトと別物とするためにディープコピー
+        let newPopulationStore = JSON.parse(JSON.stringify(populationStore)) as PopulationTypeForChart;
 		// 総人口、年少人口、生産年齢人口、老年人口それぞれのラベルに対して
-		// pop_added: { label: "生産年齢人口"; data: Data[]; }
 		pops_added.forEach((pop_added => {
-            // ラベルに対するデータ
+			// pop_added: { label: "生産年齢人口"; data: Data[]; }
             let dataPerLabel = newPopulationStore[pop_added.label];
 			// 各年に対して
-			// py(per year): { year: number; value: number; rate?: number;}
 			pop_added.data.forEach(py => {
+				// py: { year: number; value: number; rate?: number;}
 				// 挿入する年度の入っているオブジェクトのインデックスを検索
 				const indexOfInsertedYear = dataPerLabel.map(p => p.year).indexOf(py.year);
 				// 追加する年度が存在しなかったら新規作成
