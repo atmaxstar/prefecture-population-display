@@ -34,7 +34,7 @@ const PrefectureSelection = ({prefectures, fetchedPrefectures, fetchPopulations,
     }
 
     return (
-        <div>
+        <div style={{margin: 15}}>
             <div className='pref-header'>
                 都道府県
             </div>
