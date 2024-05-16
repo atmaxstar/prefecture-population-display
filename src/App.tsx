@@ -31,7 +31,7 @@ function App() {
     <div className='App'>
       {isLoading && <Loading/>}
 
-      <h1>都道府県別の総人口推移グラフ</h1>
+      <h1>都道府県別の人口推移グラフ</h1>
 
       <PrefectureSelection 
         prefectures={prefectures} 
