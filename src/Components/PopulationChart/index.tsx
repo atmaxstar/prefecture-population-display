@@ -1,9 +1,15 @@
 import React from 'react'
 import Chart from './Chart'
+import { PopulationTypeForChart } from '../../hooks/useStorePopulations';
 
-const PopulationChart = () => {
+interface Props {
+  selectedPrefectures: string[];
+  populationStore: PopulationTypeForChart;
+}
+
+const PopulationChart = ({selectedPrefectures, populationStore}: Props) => {
   return (
-    <Chart/>
+    <Chart selectedPrefectures={selectedPrefectures} populationStore={populationStore}/>
   )
 }
 

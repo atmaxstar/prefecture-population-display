@@ -1,6 +1,7 @@
-import React from 'react'
-import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts'
+import React, { useEffect } from 'react'
+import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { GRAPH_COLORS } from './COLORS'
+import { PopulationTypeForChart } from '../../hooks/useStorePopulations'
 
 const prefs = [
   "愛知県","長野県"
@@ -38,17 +39,28 @@ const data = [
   },
 ]
 
-const Chart = () => {
+interface Props {
+  selectedPrefectures: string[];
+  populationStore: PopulationTypeForChart;
+}
+
+const Chart = ({selectedPrefectures, populationStore}: Props) => {
+    const displayedData = populationStore.総人口;
+
     return (
-      <LineChart width={730} height={250} data={data}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="year" label={{ value: '年度',  position: 'insideBottomRight' }}/>
-        <YAxis label={{ value: '人口数', position: 'insideTopLeft' }}/>
-        <Tooltip />
-        <Legend />
-        {prefs.map((pref, index)=><Line type="monotone" dataKey={pref} stroke={GRAPH_COLORS[index % GRAPH_COLORS.length]} />)}
-      </LineChart>
+      <ResponsiveContainer width={730} height={300}>
+        <LineChart  data={displayedData}
+          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="year" label={{ value: '年度',  position: 'insideBottomRight' }}/>
+          <YAxis label={{ value: '人口数', position: 'insideTopLeft' }} />
+          <Tooltip />
+          <Legend />
+          {selectedPrefectures.map((pref, index) => 
+            <Line key={pref} type="monotone" dataKey={pref} stroke={GRAPH_COLORS[index % GRAPH_COLORS.length]} />)
+          }
+        </LineChart>
+      </ResponsiveContainer>
     )
 }
 
