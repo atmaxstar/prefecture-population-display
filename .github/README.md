@@ -9,27 +9,6 @@
   <img src="https://img.shields.io/badge/-React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
 </p>
 
-## 目次
-
-1. [プロジェクトについて](#プロジェクトについて)
-2. [環境](#環境)
-3. [ディレクトリ構成](#ディレクトリ構成)
-4. [開発環境構築](#開発環境構築)
-5. [トラブルシューティング](#トラブルシューティング)
-
-<!-- READMEの作成方法のドキュメントのリンク -->
-<br />
-<div align="right">
-    <a href="READMEの作成方法のリンク"><strong>READMEの作成方法 »</strong></a>
-</div>
-<br />
-<!-- Dockerfileのドキュメントのリンク -->
-<div align="right">
-    <a href="Dockerfileの詳細リンク"><strong>Dockerfileの詳細 »</strong></a>
-</div>
-<br />
-<!-- プロジェクト名を記載 -->
-
 ## 都道府県別の人口推移グラフ
 
 ## 環境
@@ -41,7 +20,7 @@
 | React                 | 18.3.1     |
 
 ## ディレクトリ構成
-
+<pre>
 .
 │  .gitignore
 │  eslint.config.mjs
@@ -107,5 +86,6 @@
             MockData_usePopulationStore.ts
             PopulationChart.test.tsx
             PrefectureSelection.test.tsx
+  </pre>
 ## デプロイ先
 https://atmaxstar.github.io/prefecture-population-display/
