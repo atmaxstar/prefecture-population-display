@@ -14,10 +14,10 @@ const Chart = ({selectedPrefectures, populationStore, selectedLabel}: Props) => 
 
     return (
       <ResponsiveContainer width='100%' height={300}>
-        <LineChart  data={displayedData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+        <LineChart  data={displayedData} margin={{ top: 50, right: 30, left: 30, bottom: 50 }}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="year" label={{ value: '年度',  position: 'insideBottomRight' }}/>
-          <YAxis label={{ value: '人口数', position: 'insideTopLeft' }} />
+          <XAxis dataKey="year" label={{ value: '年度',  position: 'insideBottomRight', dx: 20, dy: 20 }}/>
+          <YAxis label={{ value: '人口数', position: 'insideTopLeft', dy: -40 }} />
           <Tooltip />
           <Legend />
           {selectedPrefectures.map((pref, index) => 
