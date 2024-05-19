@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { GRAPH_COLORS } from './COLORS'
 import { PopulationTypeForChart } from '../../hooks/useStorePopulations'
