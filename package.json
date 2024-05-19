@@ -1,5 +1,6 @@
 {
   "name": "prefecture-population-display",
+  "homepage": "https://atmaxstar.github.io/prefecture-population-display/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,7 @@
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "axios": "^1.6.8",
+    "gh-pages": "^6.1.1",
     "jest": "^27.5.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -24,6 +26,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "lint:prettier": "prettier --check .",
     "fix:prettier": "prettier --write .",
     "lint:eslint": "eslint \".js,.ts\" --ignore-path .gitignore .",
