@@ -17,10 +17,10 @@ const PopulationChart = ({selectedPrefectures, populationStore}: Props) => {
     <div className='chart-container'>
       {
         Options.map(op => 
-          <>
+          <div key={op}>
             <input id={op} type="radio" name="category" value={op}  checked={selectedLabel === op} onChange={selectLabel}/>
             <label htmlFor={op}>{op}</label>
-          </>
+          </div>
         )
       }
 
